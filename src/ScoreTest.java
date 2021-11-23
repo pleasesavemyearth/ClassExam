@@ -8,7 +8,7 @@ public class ScoreTest {
 		System.out.println("총점 : " + s1.getSum());
 		System.out.println("평균 : " + s1.getAvg());
 		
-		
+		//위에건 디폴트 테스트한거고 2명 테스트 해야됨..
 		
 	}
 
