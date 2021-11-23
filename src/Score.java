@@ -1,12 +1,12 @@
 
 public class Score {
-
-	String name;
+//멤버변수가 많아지면 프로그램이 꼬임, 멤머변수는 최소한으로 하고 메소드를 강화시켜야 함
+	String name; 
 	int korean;
 	int english;
 	int math;
-	int sum;
-	int avg;
+	/*int sum;
+	double avg; 좋지 않음*/
 	
 	public Score() { // 디폴트 생성자 (디폴트 = 인수가 없다는 뜻)
 		name = "홍길동";
@@ -35,12 +35,12 @@ public class Score {
 	public void setMath(int pMath) {
 		math = pMath;
 	}
-	public void setSum(int pSum) {
+	/*public void setSum(int pSum) {
 		sum = pSum;
 	}
 	public void setAvg(int pAvg) {
 		avg = pAvg;
-	}
+	}*/
 	
 	public String getName() {
 		return name;
@@ -54,17 +54,30 @@ public class Score {
 	public int getMath() {
 		return math;
 	}
-	public int getSum() { //여기서부터..~~
-		sum = korean + english + math;
-		return sum;
+	
+	
+	public int getSum() {
+		return korean + english + math;
 	}
-	public int getAvg() {
+	public double getAvg() {
+		return getSum() / 3; // 또는 (double)getSum()/3 또는 getSum()/3.0
+	}
+	
+	
+	
+	/* 이건 맞지만 좋지않음
+	 public int getSum() { //여기서부터..~~
+	 
+		sum = korean + english + math;
+		return sum; //return을 빼먹어서 나오지 않았었음
+	}
+	public double getAvg() {
 		avg = ( korean + english + math) / 3;
 		return avg;
-	}
+	}*/
 
 
-	/*메소드 정의
+	/*메소드 정의 이건 오답
 	public int sum() { //총점
 		sum = korean + english + math;
 		return sum;
